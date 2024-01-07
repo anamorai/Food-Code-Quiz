@@ -7,14 +7,19 @@ let startscreen = document.getElementById('start-screen');
 let questions = document.getElementById('questions');
 // Set a variable so that we know which question we are targettting
 let questionIndex = 0;
-// Define a variable to keep a track of the timer 
-let quizTime = 60;
 // Target end screen
 let endScreen = document.getElementById('end-screen');
 // Target the fianl score (span element)
 let finalScore = document.getElementById('final-score');
 // Target the submit button
-let submitbtn = document.getElementById('submit')
+let submitbtn = document.getElementById('submit');
+// Set the timer count
+var count = 60;
+// Link the timer to the HTML;
+let timerEl = document.getElementById('time');
+// Target the whole timer element
+let timerDiv = document.getElementsByClassName('timer');
+
 
 // Questions
 const quizQuestion = [
@@ -45,8 +50,30 @@ const quizQuestion = [
     },
 ];
 
+// Setting two functions to start at the same time (timer and start quiz)
+function init(event) {
+    startQuiz(event);
+    startTime(event);
+};
+
+// Timer function
+function startTime(event) {
+    event.preventDefault()
+    let interval = setInterval(function () {
+        if (count > 0) {
+            count = count - 1;
+            timerEl.innerHTML = count
+        }
+        else {
+            clearInterval(interval)
+        }
+    }, 1000);
+}
+
+// Start quiz function
 function startQuiz(event) {
     event.preventDefault();
+
     // console.log(questionIndex)
     questions.innerHTML = "";
     if (questionIndex < quizQuestion.length) {
@@ -79,8 +106,12 @@ function startQuiz(event) {
             choicebtn.textContent = questionChoice[i]
 
             choicebtn.addEventListener('click', function (event) {
-                event.preventDefault();
+                // event.preventDefault();
                 console.log(event.target.innerHTML);
+                console.log('Hello');
+                if (!event.target.matches('.choices')) {
+                    return;
+                }
 
                 // Now add if else statememnt to show an alert if the answer is correct or not
                 if (event.target.innerHTML === quizQuestion[questionIndex].answer) {
@@ -90,7 +121,7 @@ function startQuiz(event) {
                 }
                 else {
                     alert("Wrong Answer");
-                    quizTime = quizTime - 5;
+                    count = count - 5;
                     questionIndex = questionIndex + 1;
                     startQuiz(event);
                 }
@@ -102,29 +133,43 @@ function startQuiz(event) {
 
     }
     else {
-        questions.innerHTML = "";
-        endScreen.classList.remove('hide');
-        endScreen.classList.add('show');
-        finalScore.innerHTML = quizTime;
-
+        quizEnd();
     }
 }
+
+function quizEnd() {
+    questions.innerHTML = "";
+    endScreen.classList.remove('hide');
+    endScreen.classList.add('show');
+    // timerDiv.style.display="none";
+    finalScore.innerHTML = count;
+    console.log(timerDiv);
+    timerDiv[0].style.display = "none";
+}
+
 
 // Function to save initials to local storage
 function saveToLocalStorage(event) {
     event.preventDefault
     let initials = document.getElementById('initials').value;
     console.log(initials)
-    let localStorageData = JSON.parse(localStorage.getItem('quiz'));
-
     let quizData = {
-        initials: initials, score: quizTime
+        initials: initials, score: count
+    }
+    let localStorageData = JSON.parse(localStorage.getItem('quiz'));
+    // Set a function so that each time there is a save to local storage it does not over write it
+    if (localStorageData === null) {
+        localStorageData = []
+        localStorageData.push(quizData)
+    }
+    else {
+        localStorageData.push(quizData)
     }
 
-    localStorage.setItem('quiz', JSON.stringify(quizData))
-
+    localStorage.setItem('quiz', JSON.stringify(localStorageData))
+    window.location.pathname = "/Challenge/Javascript-Code-Quiz/highscores.html"
 }
 
 // Add event listener to the start button 
-startbtn.addEventListener('click', startQuiz)
+startbtn.addEventListener('click', init)
 submitbtn.addEventListener('click', saveToLocalStorage)
