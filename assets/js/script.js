@@ -58,14 +58,17 @@ function init(event) {
 
 // Timer function
 function startTime(event) {
-    event.preventDefault()
+    event.preventDefault();
+
     let interval = setInterval(function () {
         if (count > 0) {
             count = count - 1;
-            timerEl.innerHTML = count
-        }
-        else {
-            clearInterval(interval)
+            timerEl.innerHTML = count;
+        } else {
+            clearInterval(interval);
+            // Show modal when the timer reaches 0 seconds
+            alert("Time's up!");
+            quizEnd(); // Call quizEnd function to handle the quiz end
         }
     }, 1000);
 }
@@ -141,7 +144,6 @@ function quizEnd() {
     questions.innerHTML = "";
     endScreen.classList.remove('hide');
     endScreen.classList.add('show');
-    // timerDiv.style.display="none";
     finalScore.innerHTML = count;
     console.log(timerDiv);
     timerDiv[0].style.display = "none";
