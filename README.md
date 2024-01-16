@@ -1,81 +1,69 @@
-# Food-Code-Quiz# Module 6 Challenge Web APIs: Code Quiz
+# Code Quiz
 
-## User Story
+I was required to create a timed quiz on JavaScript fundamentals that stores high scores that allows a user to gauge their progress compared to their peers. My page runs in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that I wrote. 
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+To complete this I will write a javascript code that will:
 
-## Acceptance Criteria
+* Generate a password when the button is clicked
+* Present a series of prompts for password criteria
+* Once prompts are answered then the password should be generated and displayed in an alert or written to the page
 
-Create a code quiz that contains the following requirements:
+## Installation
+
+To open the project please follow this link: https://anamorai.github.io/Javascript-Code-Quiz/
+
+## Usage 
+
+Once you open the URL, you will see the following:
+
+![This is the first thing you will see after opening the website](assets/1.png)
+
+
+By clicking on the 'Generate Password' button you will see a series of prompts. It will look like this: 
+
+![If you scroll down, it will look like this](assets/2.png)
+
+
+## Badges
+
+![GitHub deployments](https://img.shields.io/github/deployments/anamorai/Javascipt-Code-Quiz/github-pages)
+![GitHub top language](https://img.shields.io/github/languages/top/anamorai/Javascript-Code-Quiz)
+
+
+## Features
 
 * A start button that when clicked a timer starts and the first question appears.
- 
-  * Questions contain buttons for each answer.
-  * 
-  * When answer is clicked, the next question appears
-  * 
-  * If the answer clicked was incorrect then subtract time from the clock
+* Questions contain buttons for each answer.
+* When answer is clicked, the next question appears
+* If the answer clicked was incorrect then subtract time from the clock
+* The quiz ends when all questions are answered or the timer reaches 0.
+* When the game ends, it displays their score and gives the user the ability to save their initials and their score
 
-* The quiz should end when all questions are answered or the timer reaches 0.
+## Credits
 
-  * When the game ends, it should display their score and give the user the ability to save their initials and their score
-  
-## Mock-Up
+I would like to refrence my bootcamp course, EdX and my tutor Praktiko for the great lessons provided which gave me the skills necessary to be able to complete this project. 
 
-The following animation demonstrates the application functionality:
+## License
 
-![Animation of code quiz. Presses button to start quiz. Clicks the button for the answer to each question, displays if answer was correct or incorrect. Quiz finishes and displays high scores. User adds their intials, then clears their intials and starts over.](./assets/08-web-apis-challenge-demo.gif)
+MIT License
 
-## Grading Requirements
+Copyright (c) [2024] [Anastasia Moraites]
 
-This challenge is graded based on the following criteria: 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-### Technical Acceptance Criteria: 40%
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-* Satisfies all of the above acceptance criteria.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
