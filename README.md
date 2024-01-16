@@ -25,7 +25,7 @@ Once you begin the game you will have a series of questions. If you answer corre
 
 After you have finished the quiz, you will have an opportunity to enter in your initials and save your highscore. It will look like this:
 
-![This is highscore page](assets/images/Score.png.png)
+![This is highscore page](assets/images/Score.png)
 
 ## Badges
 
