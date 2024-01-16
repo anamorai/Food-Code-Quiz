@@ -7,3 +7,12 @@ for (let i = 0; i < localStorageData.length; i++) {
     highscoreList.appendChild(listItem);
 }
 
+    // Add an event listener to the button
+    document.getElementById("clear").addEventListener("click", function() {
+        // Clear the local storage
+        localStorage.clear();
+        // Display an alert
+        alert("Highscores cleared!");
+        // Refresh the page after the alert is closed
+        location.reload();
+      });
