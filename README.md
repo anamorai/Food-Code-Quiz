@@ -16,17 +16,20 @@ To open the project please follow this link: https://anamorai.github.io/Javascri
 
 Once you open the URL, you will see the following:
 
-![This is the first thing you will see after opening the website](assets/1.png)
+![This is the first thing you will see after opening the website](assets/images/Land.png)
 
 
-By clicking on the 'Generate Password' button you will see a series of prompts. It will look like this: 
+Once you begin the game you will have a series of questions. If you answer correctly or incorrectly an alert will notify you. There is also an active timer in the right hand corner. It will look like this: 
 
-![If you scroll down, it will look like this](assets/2.png)
+![If you begin the quiz, it will look like this](assets/images/Game.png)
 
+After you have finished the quiz, you will have an opportunity to enter in your initials and save your highscore. It will look like this:
+
+![This is highscore page](assets/images/Score.png.png)
 
 ## Badges
 
-![GitHub deployments](https://img.shields.io/github/deployments/anamorai/Javascipt-Code-Quiz/github-pages)
+![GitHub deployments](https://img.shields.io/github/deployments/anamorai/Javascript-Code-Quiz/github-pages)
 ![GitHub top language](https://img.shields.io/github/languages/top/anamorai/Javascript-Code-Quiz)
 
 
