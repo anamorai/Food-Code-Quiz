@@ -169,7 +169,7 @@ function saveToLocalStorage(event) {
     }
 
     localStorage.setItem('quiz', JSON.stringify(localStorageData))
-    window.location.pathname = "/Challenge/Javascript-Code-Quiz/highscores.html"
+    window.location.pathname = "/Javascript-Code-Quiz/highscores.html";
 }
 
 // Add event listener to the start button 
